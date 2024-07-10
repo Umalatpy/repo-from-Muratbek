@@ -14,9 +14,10 @@ import { UsersService } from './service/users.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent{
+  a: any
   constructor(UsersService: UsersService) {
     
-    
+    this.a = UsersService.users
   }
 
 
