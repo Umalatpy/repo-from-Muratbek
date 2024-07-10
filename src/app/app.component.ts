@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NgModel } from '@angular/forms';
 import { UsersApiService } from './service/users-api.service';
+import { subscribeOn } from 'rxjs';
+import { UsersService } from './service/users.service';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,11 +13,18 @@ import { UsersApiService } from './service/users-api.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  Users: any;
-  constructor(public get: UsersApiService) {
-    this.Users = get.getUsers();
+export class AppComponent{
+  constructor(UsersService: UsersService) {
+    
+    
   }
 
 
+
+  
+
+  
+
+
 }
+
