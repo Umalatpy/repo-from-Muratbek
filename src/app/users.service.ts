@@ -16,7 +16,14 @@ export class UsersService {
 
   deleteUser(id: number): void {
     this.users = this.users.filter(user => user.id !== id);
-    console.log('delete user');
+  }
+
+  addUser(user: User): void {
+    this.users.push(user);
+  }
+
+  editUser(user: User): void {
+    this.users = this.users.map(u => u.id === user.id ? user : u);
   }
 
 }

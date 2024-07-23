@@ -1,14 +1,27 @@
 .user-card {
-    width: 400px;
+    width: 320px;
     border: 1px solid black;
-    border-radius: 1%;
-    margin-top: 20px;
+    border-radius: 2%;
     padding: 0 10px 10px;
+    box-sizing: border-box;
 }
 
 .btn-delete {
     display: block;
-    margin: 10px auto 0;
-    width: 100px;
+    width: 80px;
     height: 25px;
+}
+
+.btn-edit {
+    display: block;
+    width: 80px;
+    height: 25px;
+}
+
+.btn-group {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }

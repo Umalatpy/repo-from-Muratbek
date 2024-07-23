@@ -1,7 +1,10 @@
 <div class="user-card">
-    <h3><u>Name</u> :{{user.name}}</h3>
+    <h3>{{user.name}}</h3>
     <p><u>Username</u>: {{user.username}}</p>
     <p><u>Email</u>: {{user.email}}</p>
-    <p><u>Company</u> :{{user.company.name}}</p>
-    <button class="btn-delete" (click)="deleteUserCard(user.id)">Delete</button>
+    <p><u>Phone</u> :{{user.phone}}</p>
+    <div class="btn-group">
+        <button class="btn-edit" (click)="editUserCard(user)">Edit User</button>
+        <button class=" btn-delete" (click)="deleteUserCard(user.id)">Delete</button>
+    </div>
 </div>

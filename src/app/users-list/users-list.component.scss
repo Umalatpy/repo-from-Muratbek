@@ -1,0 +1,14 @@
+.users-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
+}
+
+.btn-add {
+    display: block;
+    width: 80px;
+    height: 25px;
+    margin-left: auto;
+}
