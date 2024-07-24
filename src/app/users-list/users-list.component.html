@@ -1,6 +1,6 @@
-<button class="btn-add" mat-raised-button (click)="openCreateUserDialog()">Add User</button>
+<button class="btn-add" mat-raised-button (click)="openCreateEditDialog()">Add User</button>
 
 <div class="users-list">
     <app-user-card *ngFor="let user of users" [user]="user" (onDelete)="deleteUserFromList($event)"
-        (onEdit)="openEditUserDialog($event)"></app-user-card>
+        (onEdit)="openCreateEditDialog($event)"></app-user-card>
 </div>

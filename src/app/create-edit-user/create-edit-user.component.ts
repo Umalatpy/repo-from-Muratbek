@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { MatDialogActions, MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-create-edit-user',
@@ -10,7 +11,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
     MatDialogActions,
     MatDialogContent,
     MatDialogTitle,
-    FormsModule,
     ReactiveFormsModule
   ],
   templateUrl: './create-edit-user.component.html',
@@ -26,7 +26,8 @@ export class CreateEditUserComponent {
   ) {
 
     this.userForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      id: [data ? data.id : uuidv4()],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       username: ['', Validators.required],
       email: ['', Validators.email],
       phone: [''],
@@ -42,7 +43,10 @@ export class CreateEditUserComponent {
   }
 
   onSave() {
-    this.dialogRef.close(this.userForm.value);
+    this.userForm.markAllAsTouched();
+    if (this.userForm.valid) {
+      this.dialogRef.close(this.userForm.value);
+    }
   }
 
 }

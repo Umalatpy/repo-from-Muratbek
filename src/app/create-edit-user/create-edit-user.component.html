@@ -2,30 +2,30 @@
 <mat-dialog-content>
     <form [formGroup]="userForm" novalidate>
         <label>Name*:</label>
-        <input formControlName="name">
+        <input formControlName="name" placeholder="Enter name">
         @if(userForm.controls["name"].invalid && userForm.controls["name"].touched){
         <div class="alert">Enter name</div>
         }
         <label>Username*:</label>
-        <input formControlName="username">
+        <input formControlName="username" placeholder="Enter username">
         @if(userForm.controls["username"].invalid && userForm.controls["username"].touched){
         <div class="alert">Enter username</div>
         }
         <label>Email:</label>
-        <input formControlName="email">
+        <input formControlName="email" placeholder="Enter email">
         @if(userForm.controls["email"].invalid && userForm.controls["email"].touched){
         <div class="alert">Enter correct email</div>
         }
         <label>Phone:</label>
-        <input formControlName="phone">
+        <input formControlName="phone" placeholder="Enter phone">
         @if(userForm.controls["phone"].invalid && userForm.controls["phone"].touched){
-        <div class="alert">Enter phone</div>
+        <div class="alert">Enter correct phone</div>
         }
     </form>
 </mat-dialog-content>
 <mat-dialog-actions>
     <div class="btn-dialog-group">
         <button mat-button (click)="onClose()">Cancel</button>
-        <button mat-button [disabled]="userForm.invalid" (click)="onSave()">OK</button>
+        <button mat-button (click)="onSave()">OK</button>
     </div>
 </mat-dialog-actions>

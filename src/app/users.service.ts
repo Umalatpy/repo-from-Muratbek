@@ -19,11 +19,10 @@ export class UsersService {
   }
 
   addUser(user: User): void {
-    this.users.push(user);
+    this.users = [user, ...this.users];
   }
 
   editUser(user: User): void {
     this.users = this.users.map(u => u.id === user.id ? user : u);
   }
-
 }

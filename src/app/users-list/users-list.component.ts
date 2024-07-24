@@ -12,7 +12,7 @@ import { CreateEditUserComponent } from '../create-edit-user/create-edit-user.co
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [UserCardComponent, NgFor, CreateEditUserComponent],
+  imports: [UserCardComponent, CreateEditUserComponent, NgFor],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss'
 })
@@ -25,30 +25,20 @@ export class UsersListComponent implements OnInit {
     this.usersApiService.getUsers().subscribe((data) => {
       this.usersService.setUsers(data);
       this.users = this.usersService.getUsers();
+      console.log(this.users);
     })
   }
 
-  openCreateUserDialog(): void {
-    const dialogRef = this.dialog.open(CreateEditUserComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        result.id = this.users[this.users.length - 1].id + 1;
-        this.usersService.addUser(result);
-        this.users = this.usersService.getUsers();
-      }
-    });
-  }
-  openEditUserDialog(user: User): void {
+  openCreateEditDialog(user: User | null = null): void {
     const dialogRef = this.dialog.open(CreateEditUserComponent, {
       data: user
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        result.id = user.id;
-        this.usersService.editUser(result);
+        user ? this.usersService.editUser(result) : this.usersService.addUser(result);
         this.users = this.usersService.getUsers();
+        console.log(this.users);
       }
     });
   }
