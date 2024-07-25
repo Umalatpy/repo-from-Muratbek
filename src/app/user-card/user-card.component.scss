@@ -1,0 +1,58 @@
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.user-card-item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 160px;
+}
+
+.user-name {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.user-username {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.user-email, .user-phone, .user-website {
+    margin: 5px 0;
+    color: #555;
+}
+
+.user-website {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.user-website:hover {
+    text-decoration: underline;
+}
+
+.user-delete{
+    margin-top: 20px;
+    padding: 5px;
+    width: 100px;
+    border: none;
+    background-color: rgb(145 135 135);
+
+    color: black;
+}
+
+.user-delete:hover{
+    transition: 0.3s;
+    background-color: rgb(255 56 56);
+}
