@@ -1,0 +1,33 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+
+    &.button {
+      margin-left: 5px;
+      background-color:#19bbd0;
+      color:rgba(0, 0, 0, 0.8);
+      font-weight: bolder;
+      
+    }
+
+    &.button:first-child{
+      margin-left: 0;
+    }
+  }
+
+  .no-select {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .header-icon{
+    margin-left: 20px;
+    color: #19bbd0;
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+  }

@@ -1,0 +1,24 @@
+<mat-toolbar style="background-color: rgba(0, 0, 0, 0.8);">
+    <mat-toolbar-row>
+      <span class="example-spacer"></span>
+      <button class="button" mat-flat-button (click)="openDialog()" class="btn-post">Добавить товар</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="aa">
+@for (user of users; track $index) {
+    <div class="card">
+        <p class="card-info card-id">{{user.id}}</p>
+        <p class="card-info card-name">{{user.name}}</p>
+        <p class="card-info card-username">{{user.username}}</p>
+        <p class="card-info card-email">{{user.email}}</p>
+        <p class="card-info card-phone">{{user.phone}}</p>
+        <button class="card-info card-btn" (click)="deleteItem(user.id)">&#10006;</button>
+        <button class="card-updt" (click)="openDialog(user)" >Редактировать</button>
+    </div>
+}
+
+</div>
+
+
+
+
