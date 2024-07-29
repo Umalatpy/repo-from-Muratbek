@@ -1,0 +1,35 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="form">
+    <div class="input-container ic1">
+      <input class="input" type="text" formControlName="name" />
+      <div class="cut cut-short"></div>
+      <label class="placeholder">Name</label>
+    </div>
+    <div class="input-container ic2">
+      <input class="input" type="text" formControlName="username" />
+      <div class="cut"></div>
+      <label class="placeholder">Username</label>
+    </div>
+    <div class="input-container ic2">
+      <input class="input" type="text" formControlName="email" />
+      <div class="cut cut-short"></div>
+      <label class="placeholder">Email</label>
+    </div>
+    <div class="input-container ic2">
+      <input class="input" type="text" formControlName="phone" />
+      <div class="cut cut-short"></div>
+      <label class="placeholder">Phone</label>
+    </div>
+    <button
+
+      class="button submit-button"
+      mat-flat-button
+      type="submit"
+    >
+      {{ isEdit ? "Добавить" : "Обновить" }}
+    </button>
+    <button class="button" mat-flat-button (click)="onNoClick()" type="button">
+      Отмена
+    </button>
+  </div>
+</form>

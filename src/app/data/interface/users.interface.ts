@@ -1,10 +1,9 @@
 export interface User {
-    length(): unknown
     id: number,
     name: string,
     username: string,
     email: string,
-    address: {
+    address?: {
       street: string,
       suite: string,
       city: string,
@@ -15,8 +14,8 @@ export interface User {
       }
     },
     phone: string,
-    website: string,
-    company: {
+    website?: string,
+    company?: {
       name: string,
       catchPhrase: string,
       bs: string

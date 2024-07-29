@@ -1,33 +1,65 @@
+.aa{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* расстояние между карточками */
+    justify-content: start; /* выравнивание по горизонтали */
+    
+}
 .card{
     position: relative;
-    display: inline-block;
-    margin: 2px;
-    width: 250px;
+    margin: 5px;
+    width: 270px;
     height: 220px;
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgb(128, 128, 128);
-    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card-id {
     font-weight: bolder;
 }
 
+.btn-post{
+    margin-left: 5px;
+    background-color:#19bbd0;
+    color:rgba(0, 0, 0, 0.8);
+    font-weight: bolder;
+    
+}
 
-.card-delete {
+
+.card-btn {
     width: 45px;
     position: absolute;
     border-radius: 10px;
-    background-color: rgb(102, 33, 33);
+    background-color: #dc2f55;
     color: rgb(255, 255, 255);
     font-weight: bolder;
-    left: 200px;
+    left: 220px;
     top: 5px;
 }
+
+
+
+.card-updt {
+    height: 30px;
+    width: 120px;
+    position: absolute;
+    bottom: 10px;
+    left: 70px;
+    border-radius: 10px;
+    background-color:#19bbd0;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bolder;
+
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
 

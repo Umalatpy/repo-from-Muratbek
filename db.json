@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Leanne Graham",
+      "username": "ddassss",
+      "email": "Sincere@april.biz",
+      "phone": "1-770-736-8031 x56442"
+    },
+    {
+      "id": "2",
+      "name": "ываfgggd",
+      "username": "ваа",
+      "email": "ыва",
+      "phone": "выа"
+    },
+    {
+      "id": null,
+      "name": "",
+      "username": "",
+      "email": "",
+      "phone": ""
+    },
+    {
+      "id": null,
+      "name": "sad",
+      "username": "asdas",
+      "email": "",
+      "phone": ""
+    }
+  ]
+}
