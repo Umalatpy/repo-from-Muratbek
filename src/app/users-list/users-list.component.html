@@ -1,4 +1,7 @@
-<button class="btn-add" mat-raised-button (click)="openCreateEditDialog()">Add User</button>
+<div class="btn-group">
+    <button class="btn-add" mat-raised-button (click)="openCreateEditDialog()">Add User</button>
+    <button class="btn-clear" mat-raised-button (click)="clearLocalStorage()">Clear Changes</button>
+</div>
 
 <div class="users-list">
     <app-user-card *ngFor="let user of users" [user]="user" (onDelete)="deleteUserFromList($event)"

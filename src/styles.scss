@@ -30,6 +30,7 @@ $mentoring-app-theme: mat.define-theme((color: (theme-type: light,
 // Comment out the line below if you want to use the deprecated `color` inputs.
 // @include mat.color-variants-backwards-compatibility($mentoring-app-theme);
 
+
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   width: 1000px;

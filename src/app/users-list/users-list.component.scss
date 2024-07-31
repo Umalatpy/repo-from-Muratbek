@@ -12,3 +12,16 @@
     height: 25px;
     margin-left: auto;
 }
+
+.btn-clear {
+    display: block;
+    width: 120px;
+    height: 25px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}

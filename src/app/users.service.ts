@@ -9,6 +9,7 @@ export class UsersService {
 
   setUsers(users: User[]): void {
     this.users = users;
+    // console.log(this.users);
   }
   getUsers(): User[] {
     return this.users;
@@ -23,6 +24,6 @@ export class UsersService {
   }
 
   editUser(user: User): void {
-    this.users = this.users.map(u => u.id === user.id ? user : u);
+    this.users = this.users.map(item => item.id === user.id ? user : item);
   }
 }

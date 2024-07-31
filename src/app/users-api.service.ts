@@ -10,7 +10,7 @@ export class UsersApiService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
+  getUsersApi(): Observable<User[]> {
     return this.http.get<User[]>("https://jsonplaceholder.typicode.com/users");
   }
 }
