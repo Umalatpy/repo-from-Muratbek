@@ -3,10 +3,19 @@
   margin-bottom: 10px;
 }
 
-.delete-btn {
-  background-color: #e42525;
+.delete-btn,
+.update-btn {
   border: none;
   border-radius: 7%;
   color: #fff;
   padding: 5px 20px;
+  margin-right: 5px;
+}
+
+.delete-btn {
+  background-color: #e42525;
+}
+
+.update-btn {
+  background-color: #3b54d2;
 }

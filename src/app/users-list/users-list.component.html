@@ -1,7 +1,17 @@
 <div class="users-list-outer">
-  <app-user-card
-    *ngFor="let user of users"
-    [user]="user"
-    (onDelete)="deleteUser($event)"
-  ></app-user-card>
+  <div class="users-list">
+    <app-user-card
+      *ngFor="let user of users"
+      [user]="user"
+      (onDelete)="deleteUser($event)"
+      (onUpdate)="redactUser($event)"
+    ></app-user-card>
+  </div>
+  <button
+    class="create-user"
+    (click)="createUser()"
+    [disabled]="isDialogClosed"
+  >
+    Create new user
+  </button>
 </div>

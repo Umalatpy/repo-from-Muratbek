@@ -1,0 +1,30 @@
+.dialog-outer {
+  padding: 20px;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.submit-btn {
+  padding: 15px 40px;
+  color: #fff;
+  align-self: center;
+  background-color: #3b54d2;
+  border: none;
+  border-radius: 7%;
+}
+
+.close-btn {
+  position: absolute;
+  background-color: #e42525;
+  color: #fff;
+  border: none;
+  height: 30px;
+  width: 30px;
+  top: 10px;
+  right: 20px;
+}

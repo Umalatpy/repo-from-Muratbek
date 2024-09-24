@@ -12,8 +12,13 @@ import { User } from '../../models/user.model';
 export class UserCardComponent {
   @Input() user!: User;
   @Output() onDelete = new EventEmitter<number>();
+  @Output() onUpdate = new EventEmitter<User>();
 
   onDeleteUser() {
     this.onDelete.emit(this.user.id);
+  }
+
+  onUpdateUser() {
+    this.onUpdate.emit(this.user);
   }
 }

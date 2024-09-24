@@ -1,0 +1,36 @@
+<div class="dialog-outer">
+  <h2 mat-dialog-title>Create new user</h2>
+  <mat-dialog-content>
+    <form class="user-form" [formGroup]="userInfoForm">
+      <mat-form-field class="user-form-field">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Website</mat-label>
+        <input matInput formControlName="website" />
+      </mat-form-field>
+
+      <button
+        class="submit-btn"
+        type="submit"
+        [disabled]="!userInfoForm.valid"
+        (click)="saveUser()"
+      >
+        {{ isRedactMode ? "Change" : "Create" }}
+      </button>
+      <div class="form-error" *ngIf="!userInfoForm.valid && userInfoForm.dirty">
+        Please fill all fields
+      </div>
+      <button class="close-btn" (click)="closeDialog()">x</button>
+    </form>
+  </mat-dialog-content>
+</div>

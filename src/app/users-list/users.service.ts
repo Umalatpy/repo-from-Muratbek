@@ -14,9 +14,17 @@ export class UsersService {
     return this.users.slice();
   }
 
+  addUser(newUser: User) {
+    this.users = [...this.users, newUser];
+  }
+
+  updateUser(updatedUser: User) {
+    this.users = this.users.map((user) =>
+      user.id !== updatedUser.id ? user : updatedUser
+    );
+  }
+
   deleteUser(id: number) {
     this.users = this.users.filter((user) => user.id !== id);
   }
-
-  constructor(private usersApiService: UsersApiService) {}
 }
