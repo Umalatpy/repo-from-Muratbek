@@ -4,13 +4,13 @@
       *ngFor="let user of users"
       [user]="user"
       (onDelete)="deleteUser($event)"
-      (onUpdate)="redactUser($event)"
+      (onUpdate)="editUser($event)"
     ></app-user-card>
   </div>
   <button
     class="create-user"
     (click)="createUser()"
-    [disabled]="isDialogClosed"
+    [disabled]="isDialogOpened"
   >
     Create new user
   </button>

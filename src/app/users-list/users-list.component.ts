@@ -1,4 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { UserCardComponent } from './user-card/user-card.component';
 import { NgFor } from '@angular/common';
@@ -13,23 +19,25 @@ export type DialogData = User | null;
   selector: 'app-users-list',
   standalone: true,
   imports: [NgFor, MatListModule, UserCardComponent, CreateEditUserComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
 })
 export class UsersListComponent implements OnInit {
   users: User[] = [];
   dialog = inject(MatDialog);
-  isDialogClosed = false;
+  isDialogOpened = false;
 
-  redactUser(dataObj: DialogData) {
+  editUser(dataObj: DialogData) {
     const dialogRef = this.dialog.open(CreateEditUserComponent, {
       data: dataObj,
     });
-    this.isDialogClosed = true;
+    this.isDialogOpened = true;
 
     dialogRef.afterClosed().subscribe((result: User) => {
-      this.isDialogClosed = false;
+      this.isDialogOpened = false;
       if (result) this.usersService.updateUser(result);
+      this.changeDetectorRef.markForCheck();
     });
   }
 
@@ -37,11 +45,12 @@ export class UsersListComponent implements OnInit {
     const dialogRef = this.dialog.open(CreateEditUserComponent, {
       data: null,
     });
-    this.isDialogClosed = true;
+    this.isDialogOpened = true;
 
     dialogRef.afterClosed().subscribe((result: User) => {
-      this.isDialogClosed = false;
+      this.isDialogOpened = false;
       if (result) this.usersService.addUser(result);
+      this.changeDetectorRef.markForCheck();
     });
   }
 
@@ -56,5 +65,8 @@ export class UsersListComponent implements OnInit {
     this.usersService.deleteUser(id);
   }
 
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
 }

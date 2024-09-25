@@ -18,28 +18,29 @@ export class UsersService {
     } else {
       this.usersApiService.fetchUsers().subscribe((usersArr) => {
         this.users = usersArr;
-        localStorage.setItem('users', JSON.stringify(usersArr));
-        this.usersChange.next(usersArr);
+        this.saveUsers();
       });
     }
   }
 
   addUser(newUser: User) {
     this.users = [...this.users, newUser];
-    localStorage.setItem('users', JSON.stringify(this.users));
-    this.usersChange.next([...this.users]);
+    this.saveUsers();
   }
 
   updateUser(updatedUser: User) {
     this.users = this.users.map((user) =>
       user.id !== updatedUser.id ? user : updatedUser
     );
-    localStorage.setItem('users', JSON.stringify(this.users));
-    this.usersChange.next([...this.users]);
+    this.saveUsers();
   }
 
   deleteUser(id: number) {
     this.users = this.users.filter((user) => user.id !== id);
+    this.saveUsers();
+  }
+
+  private saveUsers() {
     localStorage.setItem('users', JSON.stringify(this.users));
     this.usersChange.next([...this.users]);
   }

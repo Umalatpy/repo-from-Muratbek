@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { User } from '../../models/user.model';
 
@@ -6,6 +12,7 @@ import { User } from '../../models/user.model';
   selector: 'app-user-card',
   standalone: true,
   imports: [MatCardModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
 })

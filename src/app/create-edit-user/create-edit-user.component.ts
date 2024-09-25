@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -26,6 +31,7 @@ import { DialogData } from '../users-list/users-list.component';
     MatInputModule,
     MatDialogContent,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './create-edit-user.component.html',
   styleUrl: './create-edit-user.component.scss',
 })
