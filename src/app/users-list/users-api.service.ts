@@ -4,7 +4,7 @@ import { User } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UsersApiService {
-  getUsers() {
+  fetchUsers() {
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
 

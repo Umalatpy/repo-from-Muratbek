@@ -3,9 +3,8 @@ import { MatListModule } from '@angular/material/list';
 import { UserCardComponent } from './user-card/user-card.component';
 import { NgFor } from '@angular/common';
 import { UsersService } from './users.service';
-import { UsersApiService } from './users-api.service';
 import { User } from '../models/user.model';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { CreateEditUserComponent } from '../create-edit-user/create-edit-user.component';
 
 export type DialogData = User | null;
@@ -18,6 +17,7 @@ export type DialogData = User | null;
   styleUrl: './users-list.component.scss',
 })
 export class UsersListComponent implements OnInit {
+  users: User[] = [];
   dialog = inject(MatDialog);
   isDialogClosed = false;
 
@@ -46,21 +46,15 @@ export class UsersListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usersApiService.getUsers().subscribe((usersArr) => {
-      this.usersService.setUsers(usersArr);
-    });
-  }
-
-  get users() {
-    return this.usersService.getUsers();
+    this.usersService.usersChange.subscribe(
+      (usersArr) => (this.users = usersArr)
+    );
+    this.usersService.getUsers();
   }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
 
-  constructor(
-    private usersService: UsersService,
-    private usersApiService: UsersApiService
-  ) {}
+  constructor(private usersService: UsersService) {}
 }
