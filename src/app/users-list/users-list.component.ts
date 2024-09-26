@@ -12,13 +12,23 @@ import { UsersService } from './users.service';
 import { User } from '../models/user.model';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEditUserComponent } from '../create-edit-user/create-edit-user.component';
-
+import { FilterUserComponent } from '../filter-user/filter-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 export type DialogData = User | null;
 
 @Component({
   selector: 'app-users-list',
   standalone: true,
-  imports: [NgFor, MatListModule, UserCardComponent, CreateEditUserComponent],
+  imports: [
+    ReactiveFormsModule,
+    NgFor,
+    MatListModule,
+    UserCardComponent,
+    CreateEditUserComponent,
+    FilterUserComponent,
+    MatDividerModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.scss',
