@@ -1,20 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { UsersApiService } from './users-api.service';
-import { Users } from '../interface/users.interface';
-import { Observable } from 'rxjs';
+import { Users } from '../interfaces/users.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
-  private users: Users[] = []
-  constructor(private usersApiService: UsersApiService) {}
+  usersApiService = inject(UsersApiService);
+  users: Users[] = [];
 
-  getUsers(): Observable<Users[]> {
-    return this.usersApiService.getUsers();
+  constructor() {
+    this.usersApiService.getUsers().subscribe((val) => {
+      this.users = val;
+    });
   }
 
-  deleteUser(id: number){
-    this.users = this.users.filter(user => user.id !== id);
+  deleteUser(id: number) {
+    this.users = this.users.filter((user) => user.id !== id);
   }
 }
