@@ -1,0 +1,19 @@
+<div class="users-list-outer">
+  <app-filter-user></app-filter-user>
+  <mat-divider></mat-divider>
+  <div class="users-list">
+    <app-user-card
+      *ngFor="let user of users"
+      [user]="user"
+      (onDelete)="deleteUser($event)"
+      (onUpdate)="editUser($event)"
+    ></app-user-card>
+  </div>
+  <button
+    class="create-user"
+    (click)="createUser()"
+    [disabled]="isDialogOpened"
+  >
+    Create new user
+  </button>
+</div>

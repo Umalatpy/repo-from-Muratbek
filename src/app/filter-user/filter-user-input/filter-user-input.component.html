@@ -1,0 +1,11 @@
+<mat-form-field class="filter-field">
+  <mat-label>Filter users</mat-label>
+  <input
+    matInput
+    placeholder="Enter filter"
+    class="filter-input"
+    [value]="filterStr"
+    (input)="handleInput($event)"
+    [matAutocomplete]="matAutocomplete"
+  />
+</mat-form-field>
