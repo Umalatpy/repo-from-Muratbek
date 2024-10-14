@@ -12,22 +12,9 @@ addUser() {
   console.log('added User');
 }
 
-// deleteUser(userId: number) {
-// console.log('deleted user');
-// }
-
-deleteUser() {  
-  console.log(`deleted user`);
-
-//   let number = 1;
-//   let newArr;
-
-// if (number === 1) { 
-//   newArr = this.users.filter((User) => typeof(User) === 'object' && User.id !== 1); 
-//    console.log(newArr);
-// }
-
-
+deleteUser(userId:number) {  
+  this.users = this.users.filter((user) => user.id !== userId)
+  console.log(`deleted user number ${userId} `);
 }
 
 editUser() {

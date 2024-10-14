@@ -21,11 +21,7 @@ export class UserListComponent {
     this.usersApiService.printLog()
   }
 
-  onDeleteMe2() {
-    console.log("fff");
-    console.log('this.userId');
-
-
-    this.usersService.deleteUser()
+  onDeleteMe2(userId: number) {
+    this.usersService.deleteUser(userId)
   }
 }
