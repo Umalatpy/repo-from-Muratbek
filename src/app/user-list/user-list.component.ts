@@ -15,16 +15,17 @@ import { NgFor } from '@angular/common';
 export class UserListComponent {
   private usersApiService = inject(UsersApiService)
   public usersService = inject(UsersService)
-
-  @Output() deleteUserEvent = new EventEmitter<any>()
-
-  deleteUser(value: any) {
-    this.deleteUserEvent.emit(value);
-    console.log(`deleted ${value} user`);
-}
   
   constructor() {
     this.usersApiService.getUsers().subscribe(users => { this.usersService.users = users })
     this.usersApiService.printLog()
+  }
+
+  onDeleteMe2() {
+    console.log("fff");
+    console.log('this.userId');
+
+
+    this.usersService.deleteUser()
   }
 }
