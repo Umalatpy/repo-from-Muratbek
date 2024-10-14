@@ -1,6 +1,10 @@
 <p>Loaded user-card Component</p>
+<h2> {{title?.toUpperCase()}} </h2>
+<h3>{{subtitle!.toUpperCase()}}</h3>
+<h4> {{someAttribute}} </h4>
 
 <div>
+    <button (click)="onDeleteMe()" >Delete Me</button>
     <div>{{user?.id}}</div>
     <div>{{user?.name}}</div>
     <div>{{user?.address}}</div>
